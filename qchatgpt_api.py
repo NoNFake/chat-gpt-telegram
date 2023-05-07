@@ -33,7 +33,7 @@ class PythonREPL:
         return output
 
 
-llm = OpenAI(temperature=0.1, openai_api_key="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")
+llm = OpenAI(temperature=0.1, openai_api_key="Your Token")
 python_repl = Tool(
     "Python REPL",
     PythonREPL().run,
@@ -92,7 +92,7 @@ def main():
     updater.start_polling()
     updater.idle()
 
-bot = telegram.Bot(token='6219680756:AAGsCFE-afmeHTbFneP5yduPOUg1xgJO5bQ')
+bot = telegram.Bot(token='Telegram Token')
 
 updates = bot.get_updates()
 
@@ -104,7 +104,7 @@ for update in updates:
     time.sleep(0.1)
 
 def main():
-    updater = Updater(token='6219680756:AAGsCFE-afmeHTbFneP5yduPOUg1xgJO5bQ', use_context=True)
+    updater = Updater(token='Telegram Token', use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler('start', start))
     dispatcher.add_handler(CommandHandler('help', help))
